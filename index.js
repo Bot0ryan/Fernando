@@ -7,7 +7,7 @@ const {
 } = require('@adiwajshing/baileys')
 const { color, bgcolor } = require('./lib/color')
 const { help } = require('./src/help')
-const { darkmenu } = require('./src/darkmenu')
+const { ryanmenu } = require('./src/ryanmenu')
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson } = require('./lib/fetcher')
 const { recognize } = require('./lib/ocr')
@@ -82,7 +82,7 @@ async function starts() {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Proosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `Tchau @${num.split('@')[0]} Ja foi tarde 😂👋`
+				teks = `Tchau @${num.split('@')[0]} vamos sentir sdds😟🥺`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			}
@@ -172,7 +172,7 @@ async function starts() {
 			switch(command) {
 				case 'help':
 				case 'menu':
-				case 'darkmenu':
+				case 'ryanmenu':
 					client.sendMessage(from, help(prefix), text)
 					break
 				case 'info':
@@ -307,9 +307,9 @@ async function starts() {
 					}
 					break
 				case 'gtts':
-					if (args.length < 1) return client.sendMessage(from, 'Qual é o código da linguagem, tio?', text, {quoted: mek})
+					if (args.length < 1) return client.sendMessage(from, 'Qual é o código da linguagem ?', text, {quoted: mek})
 					const gtts = require('./lib/gtts')(args[0])
-					if (args.length < 2) return client.sendMessage(from, 'Cadê o texto tio', text, {quoted: mek})
+					if (args.length < 2) return client.sendMessage(from, 'Cadê o texto?', text, {quoted: mek})
 					dtt = body.slice(9)
 					ranm = getRandom('.mp3')
 					rano = getRandom('.ogg')
@@ -335,25 +335,10 @@ async function starts() {
 					buffer = await getBuffer(`https://imgur.com/${memein.hash}.jpg`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '.......'})
 					break
-				case 'porno':
-					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx3BgnL2qAHDTlfCPMAvdjuLGvOx402dSdhw&usqp=CAU`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Adm proibiu porno no gp🙄'})
-					break
 				case 'dono':
 					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://i.imgur.com/d1M6lOz.jpg`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: '*CRIADOR:* DarkYT\n*YOUTUBE:* encurtador.com.br/pAN27'})
-					break
-				case 'belle2':
-					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://4.bp.blogspot.com/-pBwX3-rdXeM/XwTW_9oT_9I/AAAAAAAAPt4/_jmeK-lOJMoE4gPYvhgFqzOp-uKnNN9ygCLcBGAsYHQ/s1600/boabronha_2.jpg`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'slc'})
-					break
-				case 'belle3':
-					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://1.bp.blogspot.com/-3K_b14RzHTA/XwTW7SQTPRI/AAAAAAAAPtY/UOaKURECbzwXfvASa3g6Pz0D_Ha73Dw4wCLcBGAsYHQ/s1600/boabronha_10.jpg`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'olha p isso mano, pqp '})
+					buffer = await getBuffer(`https://image.freepik.com/vetores-gratis/jesus-te-ama-ilustracao-religiosa-citacao-de-mao-desenhada-da-biblia-letras-cristas_95404-175.jpg`)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: '*CRIADOR:* Fernando'})
 					break
 				case 'akeno':
 					meme = await kagApi.memes()
@@ -384,22 +369,7 @@ async function starts() {
 					memein = await kagApi.memeindo()
 					buffer = await getBuffer(`https://i.imgur.com/yOFxSUR.jpg`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Boa noite fml ❤️'})
-					break
-				case 'belle':
-					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZu6GwgURUgkuWZXOq-KPLRvA5LOezhvY_VQ&usqp=CAU`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: '👀️'})
-					break
-				case 'belle1':
-					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ7ot6RZPnXSJFFKVjPoeXHjTYyi6uk5W_mA&usqp=CAU`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: '👀️'})
-					break
-				case 'mia':
-					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaKeXU5ryvFTNz6nJm9cioGCoeqlZQSh1Mgw&usqp=CAU`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: '👀️'})
-					break
+					break 
 				case 'lofi':
 					memein = await kagApi.memeindo()
 					buffer = await getBuffer(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL9hZBPRo16fIhsIus3t1je2oAU23pQqBpfw&usqp=CAU`)
@@ -412,15 +382,10 @@ async function starts() {
 					break
 				case 'canal':
 					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://imgur.com/gallery/xuTCBPO`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: '️canal do dark: https://youtube.com/channel/UCRaC-6JyCW_iqbW1DbuXVxQ'})
+					buffer = await getBuffer(`https://images.tcdn.com.br/img/editor/up/759361/Youtubebanner.jpg`)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: '️canal do dono: https://youtube.com/channel/UCUAWFYfMSlx-78EhJknehjg'})
 					break
-				case 'mia1':
-					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjVCGkGDxARumfloekQMCazM8uvpj2AgW2lg&usqp=CAU`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: '👀️'})
-					break
-				case 'nsfwloli':
+			        case 'nsfwloli':
 					memein = await kagApi.memeindo()
 					buffer = await getBuffer(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJhzKetbU3pzhoZdaIo6qBklCzwvmCCOznbg&usqp=CAU`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Rum️'})
@@ -429,12 +394,7 @@ async function starts() {
 					memein = await kagApi.memeindo()
 					buffer = await getBuffer(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKlc2hMIJ4PjW5tIXltrKe6xeBoKPLKTZMnQ&usqp=CAU`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '🤭'})
-					break
-				case 'mia2':
-					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://i.gifer.com/7udO.gif`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: '👀️'})
-					break
+					break 
 				case 'setprefix':
 					if (args.length < 1) return
 					if (!isOwner) return reply(mess.only.ownerB)
@@ -473,7 +433,7 @@ async function starts() {
 					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
 					break
 				case 'ytsearch':
-					if (args.length < 1) return reply('O que você está procurando? pau?')
+					if (args.length < 1) return reply('O que você está procurando?')
 					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/ytsearch?q=${body.slice(10)}&apiKey=${apiKey}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					teks = '=================\n'
